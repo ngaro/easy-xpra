@@ -24,3 +24,9 @@ Containers based on this types of Dockerfile are best launched with `-d`
 
 * `XPRA_DISPLAY` is the display number of xpra (default `:100`)
 * `XPRA_PORT` is the TCP-port on which xpra listens  (default `10000`)
+
+## Development
+Want to improve this (bugfixes, extra features, ...) ?
+
+Fork this repository on GitHub instead of cloning it,
+I and other users might be interested in your changes !
