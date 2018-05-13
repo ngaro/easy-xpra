@@ -1,8 +1,7 @@
 FROM ubuntu:18.04
 MAINTAINER Nikolas Garofil "nikolas@garofil.be"
 
-RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get -y install xpra
-RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get -y install xpra && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 ENV XPRA_DISPLAY=":100"
 
