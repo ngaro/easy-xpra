@@ -1,7 +1,9 @@
-FROM ubuntu:18.04
+FROM alpine:3.9
 MAINTAINER Nikolas Garofil "nikolas@garofil.be"
 
-RUN apt-get update && apt-get -y install xpra && apt-get -y --purge autoremove && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+RUN apk add --no-cache --update xpra
+RUN cp /etc/xpra/xorg.conf /etc/X11/xorg.conf.d/00_xpra.conf
+RUN echo "xvfb=Xorg" >> /etc/xpra/xpra.conf
 
 ENV XPRA_DISPLAY=":100"
 
@@ -9,4 +11,4 @@ ARG XPRA_PORT=10000
 ENV XPRA_PORT=$XPRA_PORT
 EXPOSE $XPRA_PORT
 
-RUN echo "#!/bin/bash\nxpra start \$XPRA_DISPLAY --start-child=\"\$*\" --bind-tcp=0.0.0.0:\$XPRA_PORT --no-daemon --exit-with-children" > /usr/bin/run_in_xpra && chmod +x /usr/bin/run_in_xpra
+COPY run_in_xpra /usr/bin/run_in_xpra
