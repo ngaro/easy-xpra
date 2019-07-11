@@ -2,14 +2,19 @@
 
 Serves as base for images using xpra but can also be used on it's own
 
-## Example usage as a seperate image
+## Tags
+
+* [latest](https://github.com/ngaro/easy-xpra/blob/master/Dockerfile) uses Ubuntu as base
+* [alpine](https://github.com/ngaro/easy-xpra/blob/alpine/Dockerfile) uses Alpine as base
+
+## Example use as Ubuntu container
 
 * Start a container on `server` : `docker run -p 12345:10000 -ti garo/easy-xpra:alpine`
 * Install something in the container: `apk add --no-cache xeyes`
 * Run it in xpra: `run_in_xpra xeyes`
 * Control/watch the program on a another system : `xpra attach tcp:server:12345`
 
-## Example use in a new Dockerfile
+## Example use of the Alpine version in a new Dockerfile
 
 ```
 FROM garo/easy-xpra:alpine
