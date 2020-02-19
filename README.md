@@ -4,8 +4,8 @@ Serves as base for images using xpra but can also be used on it's own
 
 ## Tags
 
-* [latest](https://github.com/ngaro/easy-xpra/blob/master/Dockerfile) uses Ubuntu as base
-* [alpine](https://github.com/ngaro/easy-xpra/blob/alpine/Dockerfile) uses Alpine as base
+* [latest](https://github.com/ngaro/easy-xpra/blob/latest/Dockerfile) uses Alpine as base
+* [ubuntu](https://github.com/ngaro/easy-xpra/blob/ubuntu/Dockerfile) uses Ubuntu as base
 
 ## Example use as Ubuntu container
 
