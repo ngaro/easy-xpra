@@ -8,6 +8,8 @@ my $branches_to_tags = {
 	"ubuntu-small" => "ubuntu-small",
 };
 
+my $current_branch = `git rev-parse --abbrev-ref HEAD`;
+
 foreach my $branch (keys %$branches_to_tags) {
 	my $image_and_tag = "$dockeruser/$image:$branches_to_tags->{$branch}";
 	if(system("git checkout $branch &&  docker build -t $image_and_tag .") == 0) {
@@ -16,3 +18,4 @@ foreach my $branch (keys %$branches_to_tags) {
 		print "Building $image_and_tag failed\n";
 	}
 }
+system("git checkout $current_branch");
