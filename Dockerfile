@@ -1,6 +1,8 @@
 FROM ubuntu:22.04
 MAINTAINER Nikolas Garofil "nikolas@garofil.be"
 
+ENV DEBIAN_FRONTEND=noninteractive
+
 RUN apt-get update && apt-get -y --no-install-recommends install xpra && apt-get -y --purge autoremove && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 ENV XPRA_DISPLAY=":100"
