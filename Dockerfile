@@ -1,4 +1,4 @@
-FROM alpine:3.18
+FROM alpine:3.21
 MAINTAINER Nikolas Garofil "nikolas@garofil.be"
 
 RUN apk add --no-cache --update xpra
